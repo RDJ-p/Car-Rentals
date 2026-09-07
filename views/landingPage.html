@@ -4,79 +4,250 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&family=Montserrat:wght@500;600;700&family=Lobster&display=swap" rel="stylesheet">
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500;700&family=Montserrat:wght@500;600;700&family=Lobster&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      h1 { font-family: 'Playfair Display', serif; }
-      p { font-family: 'Roboto', sans-serif; }
-      button { font-family: 'Montserrat', sans-serif; }
-      li { font-family: 'Playfair Display', serif; }
+      h1,
+      h2,
+      h3 {
+        font-family: "Playfair Display", serif;
+      }
+      p,
+      label,
+      input,
+      span {
+        font-family: "Roboto", sans-serif;
+      }
+      button,
+      a {
+        font-family: "Montserrat", sans-serif;
+      }
+      .nav-link {
+        font-family: "Playfair Display", serif;
+      }
     </style>
-    <title>Landing Page</title>
+    <title>Landing Page - Car Rentals</title>
   </head>
-  <body>
-    
-    <nav
-      class="flex items-center gap-4 justify-between p-4 bg-[#00000] text-black"
+  <body class="bg-gray-50 text-gray-800 antialiased overflow-x-hidden">
+    <header
+      class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm transition duration-300"
     >
-      <img src="../public/Logo (1).png" alt="Logo" />
-      <ul class="flex space-x-4">
-        <a href="/"><li class="">Home</li></a>
-        <a href="/vehicules"><li class="">Vehicules</li></a>
-        <a href="/details"><li class="">Details</li></a>
-        <a href="/about"><li class="">About us</li></a>
-        <a href="/contact"><li class="">Contact us</li></a>
-      </ul>
-      <div class="flex flex-row items-center space-x-4">
-        <img src="../public/phone.png" alt="phoneLogo" />
-        <div class="flex flex-col">
-          <p class="text-xs opacity-80">Need help ?</p>
-          <p class="font-semibold">+12345678</p>
+      <nav
+        class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3.5"
+      >
+        <a href="/" class="flex-shrink-0">
+          <img
+            src="../public/Logo (1).png"
+            alt="Car Rentals Logo"
+            class="h-8 sm:h-10 w-auto object-contain"
+          />
+        </a>
+
+        <ul
+          class="hidden lg:flex items-center space-x-6 xl:space-x-8 text-gray-700 font-medium"
+        >
+          <li>
+            <a
+              href="/"
+              class="nav-link text-base hover:text-[#5937E0] transition-colors py-1 border-b-2 border-[#5937E0] text-[#5937E0]"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="/vehicules"
+              class="nav-link text-base hover:text-[#5937E0] transition-colors py-1 border-b-2 border-transparent"
+              >Vehicles</a
+            >
+          </li>
+          <li>
+            <a
+              href="/details"
+              class="nav-link text-base hover:text-[#5937E0] transition-colors py-1 border-b-2 border-transparent"
+              >Details</a
+            >
+          </li>
+          <li>
+            <a
+              href="/about"
+              class="nav-link text-base hover:text-[#5937E0] transition-colors py-1 border-b-2 border-transparent"
+              >About us</a
+            >
+          </li>
+          <li>
+            <a
+              href="/contact"
+              class="nav-link text-base hover:text-[#5937E0] transition-colors py-1 border-b-2 border-transparent"
+              >Contact us</a
+            >
+          </li>
+        </ul>
+
+        <div class="flex items-center gap-3 sm:gap-4">
+          <div
+            class="hidden sm:flex items-center space-x-3 bg-gray-100/80 hover:bg-gray-100 px-3 py-1.5 rounded-full transition-colors"
+          >
+            <img
+              src="../public/phone.png"
+              alt="Phone"
+              class="w-5 h-5 object-contain"
+            />
+            <div class="flex flex-col text-left">
+              <span class="text-[11px] leading-tight text-gray-500"
+                >Need help?</span
+              >
+              <a
+                href="tel:+12345678"
+                class="text-xs sm:text-sm font-bold text-gray-800 hover:text-[#5937E0] transition-colors"
+                >+12345678</a
+              >
+            </div>
+          </div>
+
+          <button
+            id="menu-toggle"
+            type="button"
+            aria-label="Toggle navigation menu"
+            class="lg:hidden p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[#5937E0]"
+          >
+            <svg
+              id="menu-icon"
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+            <svg
+              id="close-icon"
+              class="w-6 h-6 hidden"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden border-t border-gray-200 bg-white px-4 pt-3 pb-5 shadow-lg"
+      >
+        <ul class="flex flex-col space-y-3 text-base text-gray-700 font-medium">
+          <li>
+            <a
+              href="/"
+              class="nav-link block px-3 py-2 rounded-md bg-[#5937E0]/10 text-[#5937E0] font-semibold"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="/vehicules"
+              class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-[#5937E0]"
+              >Vehicles</a
+            >
+          </li>
+          <li>
+            <a
+              href="/details"
+              class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-[#5937E0]"
+              >Details</a
+            >
+          </li>
+          <li>
+            <a
+              href="/about"
+              class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-[#5937E0]"
+              >About us</a
+            >
+          </li>
+          <li>
+            <a
+              href="/contact"
+              class="nav-link block px-3 py-2 rounded-md hover:bg-gray-100 hover:text-[#5937E0]"
+              >Contact us</a
+            >
+          </li>
+        </ul>
+        <div
+          class="mt-4 pt-3 border-t border-gray-100 flex sm:hidden items-center space-x-3 px-3"
+        >
+          <img
+            src="../public/phone.png"
+            alt="Phone"
+            class="w-5 h-5 object-contain"
+          />
+          <div class="flex flex-col">
+            <span class="text-xs text-gray-500">Need help?</span>
+            <a href="tel:+12345678" class="text-sm font-bold text-gray-800"
+              >+12345678</a
+            >
+          </div>
         </div>
       </div>
-    </nav>
+    </header>
 
-    
     <section
-      class="relative min-h-[750px] w-full overflow-hidden flex flex-col justify-between pb-12"
+      class="relative min-h-[620px] sm:min-h-[700px] lg:min-h-[760px] w-full overflow-hidden flex flex-col justify-between pb-10 sm:pb-14"
     >
-      
       <div
-        class="absolute inset-0 bg-[url('../public/hero.jpg')] bg-cover bg-center bg-no-repeat blur-sm scale-105"
+        class="absolute inset-0 bg-[url('../public/hero.jpg')] bg-cover bg-center bg-no-repeat blur-[2px] scale-105"
       ></div>
+      <div class="absolute inset-0 bg-black/45"></div>
 
-      
-      <div class="absolute inset-0 bg-black/40"></div>
-
-      
       <div
-        class="relative z-10 flex flex-col items-center justify-center pt-32 px-4 text-center text-white"
+        class="relative z-10 flex flex-col items-center justify-center pt-16 sm:pt-24 lg:pt-28 px-4 sm:px-6 text-center text-white max-w-4xl mx-auto"
       >
-        <h1 class="text-3xl md:text-5xl font-bold mb-4">
+        <h1
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 drop-shadow-md"
+        >
           Experience the road like never before
         </h1>
-        <p class="max-w-xl text-sm md:text-base text-gray-200">
-          Find your perfect ride from our extensive fleet of well-maintained vehicles. Whether you need a compact car for city driving or a luxury SUV for weekend getaways, we have the right vehicle for your journey.
+        <p
+          class="max-w-2xl text-sm sm:text-base md:text-lg text-gray-100 drop-shadow"
+        >
+          Find your perfect ride from our extensive fleet of well-maintained
+          vehicles. Whether you need a compact car for city driving or a luxury
+          SUV for weekend getaways, we have the right vehicle for your journey.
         </p>
-        <button
-          class="w-[154px] h-[40px] bg-[#5937E0] hover:bg-[#7c63e2] text-white px-2 py-2 rounded transition duration-200 mt-4"
+        <a
+          href="/vehicules"
+          class="inline-flex items-center justify-center bg-[#5937E0] hover:bg-[#462ab0] text-white font-medium px-6 py-2.5 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 mt-6 text-sm sm:text-base"
         >
           View all Cars
-        </button>
+        </a>
       </div>
 
-      
       <form
         action="/Post"
         method="POST"
-        class="relative z-10 w-11/24 max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-xl grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-800"
+        class="relative z-10 w-[92%] sm:w-11/12 max-w-4xl mx-auto bg-white p-4 sm:p-6 lg:p-8 rounded-xl shadow-2xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-gray-800 mt-8"
       >
-        <h1 class="text-xl font-bold md:col-span-3 text-gray-900 mb-1">
+        <h2
+          class="text-lg sm:text-xl font-bold sm:col-span-2 lg:col-span-3 text-gray-900 border-b pb-2"
+        >
           Book your car
-        </h1>
+        </h2>
 
         <div class="flex flex-col">
-          <label for="carType" class="text-xs font-semibold mb-1"
+          <label for="carType" class="text-xs font-semibold text-gray-600 mb-1"
             >Car Type</label
           >
           <input
@@ -84,13 +255,15 @@
             id="carType"
             name="carType"
             placeholder="Enter car type"
-            class="border border-gray-300 rounded px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#5937E0]"
+            class="w-full border border-gray-300 rounded-lg px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#5937E0] focus:border-transparent transition"
             required
           />
         </div>
 
         <div class="flex flex-col">
-          <label for="rentalPlace" class="text-xs font-semibold mb-1"
+          <label
+            for="rentalPlace"
+            class="text-xs font-semibold text-gray-600 mb-1"
             >Place of rental</label
           >
           <input
@@ -98,13 +271,15 @@
             id="rentalPlace"
             name="rentalPlace"
             placeholder="Enter rental place"
-            class="border border-gray-300 rounded px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#5937E0]"
+            class="w-full border border-gray-300 rounded-lg px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#5937E0] focus:border-transparent transition"
             required
           />
         </div>
 
         <div class="flex flex-col">
-          <label for="returnPlace" class="text-xs font-semibold mb-1"
+          <label
+            for="returnPlace"
+            class="text-xs font-semibold text-gray-600 mb-1"
             >Place of return</label
           >
           <input
@@ -112,350 +287,869 @@
             id="returnPlace"
             name="returnPlace"
             placeholder="Enter return place"
-            class="border border-gray-300 rounded px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#5937E0]"
+            class="w-full border border-gray-300 rounded-lg px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#5937E0] focus:border-transparent transition"
             required
           />
         </div>
 
         <div class="flex flex-col">
-          <label for="rentalDate" class="text-xs font-semibold mb-1"
+          <label
+            for="rentalDate"
+            class="text-xs font-semibold text-gray-600 mb-1"
             >Rental Date</label
           >
           <input
             type="date"
             id="rentalDate"
             name="rentalDate"
-            class="border border-gray-300 rounded px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#5937E0]"
+            class="w-full border border-gray-300 rounded-lg px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#5937E0] focus:border-transparent transition"
             required
           />
         </div>
 
         <div class="flex flex-col">
-          <label for="returnDate" class="text-xs font-semibold mb-1"
+          <label
+            for="returnDate"
+            class="text-xs font-semibold text-gray-600 mb-1"
             >Return Date</label
           >
           <input
             type="date"
             id="returnDate"
             name="returnDate"
-            class="border border-gray-300 rounded px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#5937E0]"
+            class="w-full border border-gray-300 rounded-lg px-3.5 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#5937E0] focus:border-transparent transition"
             required
           />
         </div>
 
-        <div class="flex items-end">
+        <div class="flex items-end sm:col-span-2 lg:col-span-1">
           <button
             type="submit"
-            class="w-full bg-[#5937E0] hover:bg-[#462ab0] text-white font-bold py-2.5 px-4 rounded transition duration-200"
+            class="w-full bg-[#5937E0] hover:bg-[#462ab0] text-white font-bold py-2.5 px-4 rounded-lg shadow-md hover:shadow-lg transition duration-200"
           >
             Submit
           </button>
         </div>
       </form>
     </section>
-    <section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
       <div
-        class="flex flex-row items-center justify-between p-4 mt-[20px] text-center gap-4"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 text-center"
       >
-        <div class="flex flex-col items-center p-4">
-          <img src="../public/g3453.png" alt="Car Image" />
-          <h1 class="mt-3 font-bold">Availability</h1>
-          <p class="mt-3">
+        <div
+          class="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition"
+        >
+          <div
+            class="w-16 h-16 flex items-center justify-center rounded-full bg-purple-50 mb-4"
+          >
+            <img
+              src="../public/g3453.png"
+              alt="Availability"
+              class="w-8 h-8 object-contain"
+            />
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-gray-900">
+            Availability
+          </h3>
+          <p class="mt-2 text-sm text-gray-600 leading-relaxed">
             Wide selection of vehicles available 24/7 for immediate booking
+            anywhere, anytime.
           </p>
         </div>
-        <div class="flex flex-col items-center p-4">
-          <img src="../public/car(2) 1.png" alt="Car Image" />
-          <h1 class="mt-3 font-bold">Comfort</h1>
-          <p class="mt-3">
-            All vehicles regularly serviced and cleaned for your safety and comfort
+
+        <div
+          class="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition"
+        >
+          <div
+            class="w-16 h-16 flex items-center justify-center rounded-full bg-purple-50 mb-4"
+          >
+            <img
+              src="../public/car(2) 1.png"
+              alt="Comfort"
+              class="w-8 h-8 object-contain"
+            />
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-gray-900">Comfort</h3>
+          <p class="mt-2 text-sm text-gray-600 leading-relaxed">
+            All vehicles regularly serviced and cleaned for your highest safety
+            and driving comfort.
           </p>
         </div>
-        <div class="flex flex-col items-center p-4">
-          <img src="../public/wallet(1) 1.png" alt="Car Image" />
-          <h1 class="mt-3 font-bold">Savings</h1>
-          <p class="mt-3">
-            Competitive rates with no hidden fees - transparent pricing you can trust
+
+        <div
+          class="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition sm:col-span-2 md:col-span-1 sm:max-w-md sm:mx-auto md:max-w-none"
+        >
+          <div
+            class="w-16 h-16 flex items-center justify-center rounded-full bg-purple-50 mb-4"
+          >
+            <img
+              src="../public/wallet(1) 1.png"
+              alt="Savings"
+              class="w-8 h-8 object-contain"
+            />
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-gray-900">Savings</h3>
+          <p class="mt-2 text-sm text-gray-600 leading-relaxed">
+            Competitive rates with no hidden fees - transparent pricing you can
+            always trust.
           </p>
         </div>
       </div>
     </section>
-    <section class="flex flex-row items-center gap-[50px] p-6 mt-6">
-      
-      <div class="ml-[100px]">
-        <img src="../public/Rentals Haitam.jpg" alt="Main feature illustration" class="max-w-[700px] rounded-md" />
-      </div>
 
-      
-      <div class="flex flex-col gap-6">
-        
-        <div class="flex items-start gap-4">
-          <img src="../public/Text+bg.png" alt="" />
-          <div>
-            <h1 class="text-xl font-bold">Easy Booking</h1>
-            <p class="text-gray-600">
-              Reserve your vehicle in minutes with our intuitive online booking system - no complicated forms or hidden steps.
-            </p>
-          </div>
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+      <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-14">
+        <div class="w-full lg:w-1/2 flex justify-center">
+          <img
+            src="../public/Rentals Haitam.jpg"
+            alt="Main feature illustration"
+            class="w-full max-w-md lg:max-w-full rounded-2xl shadow-xl object-cover"
+          />
         </div>
 
-        
-        <div class="flex items-start gap-4">
-          <img src="../public/Text+bg (1).png" alt="" />
-          <div>
-            <h1 class="text-xl font-bold">Flexible Policies</h1>
-            <p class="text-gray-600">
-              Enjoy free cancellation up to 24 hours before pickup and modify your reservation anytime with ease.
-            </p>
+        <div class="w-full lg:w-1/2 flex flex-col gap-6">
+          <div
+            class="flex items-start gap-4 p-3 sm:p-4 rounded-xl hover:bg-white transition"
+          >
+            <img
+              src="../public/Text+bg.png"
+              alt="Easy Booking"
+              class="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 object-contain"
+            />
+            <div>
+              <h3 class="text-lg sm:text-xl font-bold text-gray-900">
+                Easy Booking
+              </h3>
+              <p class="text-sm text-gray-600 mt-1 leading-relaxed">
+                Reserve your vehicle in minutes with our intuitive online
+                booking system - no complicated forms or hidden steps.
+              </p>
+            </div>
           </div>
-        </div>
 
-        
-        <div class="flex items-start gap-4">
-          <img src="../public/Text+bg (2).png" alt="" />
-          <div>
-            <h1 class="text-xl font-bold">Erat at semper</h1>
-            <p class="text-gray-600">
-              Experience hassle-free booking with our user-friendly platform
-            </p>
+          <div
+            class="flex items-start gap-4 p-3 sm:p-4 rounded-xl hover:bg-white transition"
+          >
+            <img
+              src="../public/Text+bg (1).png"
+              alt="Flexible Policies"
+              class="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 object-contain"
+            />
+            <div>
+              <h3 class="text-lg sm:text-xl font-bold text-gray-900">
+                Flexible Policies
+              </h3>
+              <p class="text-sm text-gray-600 mt-1 leading-relaxed">
+                Enjoy free cancellation up to 24 hours before pickup and modify
+                your reservation anytime with ease.
+              </p>
+            </div>
           </div>
-        </div>
 
-        
-        <div class="flex items-start gap-4">
-          <img src="../public/Text+bg (3).png" alt="" />
-          <div>
-            <h1 class="text-xl font-bold">Erat at semper</h1>
-            <p class="text-gray-600">
-              Experience hassle-free booking with our user-friendly platform
-            </p>
+          <div
+            class="flex items-start gap-4 p-3 sm:p-4 rounded-xl hover:bg-white transition"
+          >
+            <img
+              src="../public/Text+bg (2).png"
+              alt="24/7 Assistance"
+              class="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 object-contain"
+            />
+            <div>
+              <h3 class="text-lg sm:text-xl font-bold text-gray-900">
+                24/7 Road Assistance
+              </h3>
+              <p class="text-sm text-gray-600 mt-1 leading-relaxed">
+                Experience hassle-free journeys knowing our dedicated roadside
+                assistance team is always on standby for you.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="flex items-start gap-4 p-3 sm:p-4 rounded-xl hover:bg-white transition"
+          >
+            <img
+              src="../public/Text+bg (3).png"
+              alt="Premium Quality"
+              class="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 object-contain"
+            />
+            <div>
+              <h3 class="text-lg sm:text-xl font-bold text-gray-900">
+                Premium Fleet
+              </h3>
+              <p class="text-sm text-gray-600 mt-1 leading-relaxed">
+                Drive clean, modern, and high-spec cars equipped with the latest
+                safety and comfort technology.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <section>
-      <div class="flex flex-row items-center justify-between w-full px-4 py-3">
-  
-  <h1 class="text-xl font-bold tracking-tight text-gray-900 sm:text-2xl">
-    Choose the car that suits you
-  </h1>
-  
-  
-  <div class="flex flex-row items-center gap-2 group cursor-pointer">
-    <p class="text-sm font-semibold text-blue-600 transition-colors group-hover:text-blue-700">
-      View All
-    </p>
-    
-    
-    <button class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-50 text-blue-600 transition-all duration-200 group-hover:bg-blue-600 group-hover:text-white group-hover:translate-x-0.5" aria-label="View all cars">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
-      </svg>
-    </button>
-  </div>
-</div>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+      <div
+        class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8"
+      >
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
+          Choose the car that suits you
+        </h2>
+
+        <a
+          href="/vehicules"
+          class="inline-flex items-center gap-2 group cursor-pointer text-sm font-semibold text-blue-600 hover:text-blue-700 transition"
+        >
+          <span>View All Cars</span>
+          <div
+            class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-50 text-blue-600 transition-all duration-200 group-hover:bg-blue-600 group-hover:text-white group-hover:translate-x-1"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          class="bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
+        >
+          <div>
+            <div class="overflow-hidden rounded-xl h-48 w-full bg-gray-100">
+              <img
+                src="../public/porshe.jpg"
+                alt="Porsche"
+                class="w-full h-full object-cover hover:scale-105 transition duration-300"
+              />
+            </div>
+            <div class="flex justify-between items-center mt-4">
+              <h3 class="text-lg sm:text-xl font-bold text-gray-900">
+                Porsche
+              </h3>
+              <p class="text-lg font-bold text-[#5937E0]">
+                $45 <span class="text-xs font-normal text-gray-500">/ day</span>
+              </p>
+            </div>
+            <div
+              class="grid grid-cols-3 gap-2 pt-3 mt-3 border-t border-gray-100 text-xs text-gray-600"
+            >
+              <div class="flex items-center gap-1.5">
+                <img
+                  src="../public/gear-shift(1) 1.png"
+                  alt="Gear"
+                  class="w-4 h-4 object-contain"
+                />
+                <p>Automatic</p>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <img
+                  src="../public/g17.png"
+                  alt="Fuel"
+                  class="w-4 h-4 object-contain"
+                />
+                <p>PB 95</p>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <img
+                  src="../public/g1593.png"
+                  alt="AC"
+                  class="w-4 h-4 object-contain"
+                />
+                <p>AC</p>
+              </div>
+            </div>
+          </div>
+          <button
+            class="w-full mt-5 bg-[#5937E0] hover:bg-[#462ab0] text-white font-medium py-2.5 px-4 rounded-lg transition duration-200 text-sm"
+          >
+            View details
+          </button>
+        </div>
+
+        <div
+          class="bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
+        >
+          <div>
+            <div class="overflow-hidden rounded-xl h-48 w-full bg-gray-100">
+              <img
+                src="../public/toyota.jpg"
+                alt="Toyota"
+                class="w-full h-full object-cover hover:scale-105 transition duration-300"
+              />
+            </div>
+            <div class="flex justify-between items-center mt-4">
+              <h3 class="text-lg sm:text-xl font-bold text-gray-900">Toyota</h3>
+              <p class="text-lg font-bold text-[#5937E0]">
+                $25 <span class="text-xs font-normal text-gray-500">/ day</span>
+              </p>
+            </div>
+            <div
+              class="grid grid-cols-3 gap-2 pt-3 mt-3 border-t border-gray-100 text-xs text-gray-600"
+            >
+              <div class="flex items-center gap-1.5">
+                <img
+                  src="../public/gear-shift(1) 1.png"
+                  alt="Gear"
+                  class="w-4 h-4 object-contain"
+                />
+                <p>Automatic</p>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <img
+                  src="../public/g17.png"
+                  alt="Fuel"
+                  class="w-4 h-4 object-contain"
+                />
+                <p>PB 95</p>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <img
+                  src="../public/g1593.png"
+                  alt="AC"
+                  class="w-4 h-4 object-contain"
+                />
+                <p>AC</p>
+              </div>
+            </div>
+          </div>
+          <button
+            class="w-full mt-5 bg-[#5937E0] hover:bg-[#462ab0] text-white font-medium py-2.5 px-4 rounded-lg transition duration-200 text-sm"
+          >
+            View details
+          </button>
+        </div>
+
+        <div
+          class="bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
+        >
+          <div>
+            <div class="overflow-hidden rounded-xl h-48 w-full bg-gray-100">
+              <img
+                src="../public/ford.jpg"
+                alt="Ford"
+                class="w-full h-full object-cover hover:scale-105 transition duration-300"
+              />
+            </div>
+            <div class="flex justify-between items-center mt-4">
+              <h3 class="text-lg sm:text-xl font-bold text-gray-900">Ford</h3>
+              <p class="text-lg font-bold text-[#5937E0]">
+                $28 <span class="text-xs font-normal text-gray-500">/ day</span>
+              </p>
+            </div>
+            <div
+              class="grid grid-cols-3 gap-2 pt-3 mt-3 border-t border-gray-100 text-xs text-gray-600"
+            >
+              <div class="flex items-center gap-1.5">
+                <img
+                  src="../public/gear-shift(1) 1.png"
+                  alt="Gear"
+                  class="w-4 h-4 object-contain"
+                />
+                <p>Automatic</p>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <img
+                  src="../public/g17.png"
+                  alt="Fuel"
+                  class="w-4 h-4 object-contain"
+                />
+                <p>PB 95</p>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <img
+                  src="../public/g1593.png"
+                  alt="AC"
+                  class="w-4 h-4 object-contain"
+                />
+                <p>AC</p>
+              </div>
+            </div>
+          </div>
+          <button
+            class="w-full mt-5 bg-[#5937E0] hover:bg-[#462ab0] text-white font-medium py-2.5 px-4 rounded-lg transition duration-200 text-sm"
+          >
+            View details
+          </button>
+        </div>
+
+        <div
+          class="bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
+        >
+          <div>
+            <div class="overflow-hidden rounded-xl h-48 w-full bg-gray-100">
+              <img
+                src="../public/honda.jpg"
+                alt="Honda"
+                class="w-full h-full object-cover hover:scale-105 transition duration-300"
+              />
+            </div>
+            <div class="flex justify-between items-center mt-4">
+              <h3 class="text-lg sm:text-xl font-bold text-gray-900">Honda</h3>
+              <p class="text-lg font-bold text-[#5937E0]">
+                $22 <span class="text-xs font-normal text-gray-500">/ day</span>
+              </p>
+            </div>
+            <div
+              class="grid grid-cols-3 gap-2 pt-3 mt-3 border-t border-gray-100 text-xs text-gray-600"
+            >
+              <div class="flex items-center gap-1.5">
+                <img
+                  src="../public/gear-shift(1) 1.png"
+                  alt="Gear"
+                  class="w-4 h-4 object-contain"
+                />
+                <p>Automatic</p>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <img
+                  src="../public/g17.png"
+                  alt="Fuel"
+                  class="w-4 h-4 object-contain"
+                />
+                <p>PB 95</p>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <img
+                  src="../public/g1593.png"
+                  alt="AC"
+                  class="w-4 h-4 object-contain"
+                />
+                <p>AC</p>
+              </div>
+            </div>
+          </div>
+          <button
+            class="w-full mt-5 bg-[#5937E0] hover:bg-[#462ab0] text-white font-medium py-2.5 px-4 rounded-lg transition duration-200 text-sm"
+          >
+            View details
+          </button>
+        </div>
+
+        <div
+          class="bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
+        >
+          <div>
+            <div class="overflow-hidden rounded-xl h-48 w-full bg-gray-100">
+              <img
+                src="../public/bmw.jpg"
+                alt="BMW"
+                class="w-full h-full object-cover hover:scale-105 transition duration-300"
+              />
+            </div>
+            <div class="flex justify-between items-center mt-4">
+              <h3 class="text-lg sm:text-xl font-bold text-gray-900">BMW</h3>
+              <p class="text-lg font-bold text-[#5937E0]">
+                $38 <span class="text-xs font-normal text-gray-500">/ day</span>
+              </p>
+            </div>
+            <div
+              class="grid grid-cols-3 gap-2 pt-3 mt-3 border-t border-gray-100 text-xs text-gray-600"
+            >
+              <div class="flex items-center gap-1.5">
+                <img
+                  src="../public/gear-shift(1) 1.png"
+                  alt="Gear"
+                  class="w-4 h-4 object-contain"
+                />
+                <p>Automatic</p>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <img
+                  src="../public/g17.png"
+                  alt="Fuel"
+                  class="w-4 h-4 object-contain"
+                />
+                <p>PB 95</p>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <img
+                  src="../public/g1593.png"
+                  alt="AC"
+                  class="w-4 h-4 object-contain"
+                />
+                <p>AC</p>
+              </div>
+            </div>
+          </div>
+          <button
+            class="w-full mt-5 bg-[#5937E0] hover:bg-[#462ab0] text-white font-medium py-2.5 px-4 rounded-lg transition duration-200 text-sm"
+          >
+            View details
+          </button>
+        </div>
+
+        <div
+          class="bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1"
+        >
+          <div>
+            <div class="overflow-hidden rounded-xl h-48 w-full bg-gray-100">
+              <img
+                src="../public/mercedes.jpg"
+                alt="Mercedes"
+                class="w-full h-full object-cover hover:scale-105 transition duration-300"
+              />
+            </div>
+            <div class="flex justify-between items-center mt-4">
+              <h3 class="text-lg sm:text-xl font-bold text-gray-900">
+                Mercedes
+              </h3>
+              <p class="text-lg font-bold text-[#5937E0]">
+                $40 <span class="text-xs font-normal text-gray-500">/ day</span>
+              </p>
+            </div>
+            <div
+              class="grid grid-cols-3 gap-2 pt-3 mt-3 border-t border-gray-100 text-xs text-gray-600"
+            >
+              <div class="flex items-center gap-1.5">
+                <img
+                  src="../public/gear-shift(1) 1.png"
+                  alt="Gear"
+                  class="w-4 h-4 object-contain"
+                />
+                <p>Automatic</p>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <img
+                  src="../public/g17.png"
+                  alt="Fuel"
+                  class="w-4 h-4 object-contain"
+                />
+                <p>PB 95</p>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <img
+                  src="../public/g1593.png"
+                  alt="AC"
+                  class="w-4 h-4 object-contain"
+                />
+                <p>AC</p>
+              </div>
+            </div>
+          </div>
+          <button
+            class="w-full mt-5 bg-[#5937E0] hover:bg-[#462ab0] text-white font-medium py-2.5 px-4 rounded-lg transition duration-200 text-sm"
+          >
+            View details
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+      <div
+        class="bg-gradient-to-r from-purple-50 via-indigo-50 to-blue-50 rounded-3xl p-6 sm:p-10 lg:p-12 flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-12"
+      >
+        <div class="flex flex-col max-w-xl text-center lg:text-left">
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
+            Download Mobile App
+          </h2>
+          <p class="mt-4 text-sm sm:text-base text-gray-600 leading-relaxed">
+            Take your experience on the go. Download our app today to unlock
+            exclusive discounts, enjoy faster performance, and manage your car
+            bookings right from your pocket—anytime, anywhere.
+          </p>
+          <div
+            class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-6"
+          >
+            <a href="#" class="transition-transform hover:scale-105">
+              <img
+                src="../public/App Store.png"
+                alt="Download on App Store"
+                class="h-10 sm:h-12 w-auto object-contain"
+              />
+            </a>
+            <a href="#" class="transition-transform hover:scale-105">
+              <img
+                src="../public/Google Play.png"
+                alt="Get it on Google Play"
+                class="h-10 sm:h-12 w-auto object-contain"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="flex justify-center w-full lg:w-auto">
+          <img
+            src="../public/Group 11.png"
+            alt="App Preview"
+            class="max-w-[260px] sm:max-w-xs md:max-w-sm w-full h-auto object-contain drop-shadow-xl"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="relative min-h-[380px] sm:min-h-[420px] flex items-center justify-center overflow-hidden py-12 px-4 sm:px-6 lg:px-8"
+    >
+      <div
+        class="absolute inset-0 bg-[url('../public/hero2.jpg')] bg-cover bg-center bg-no-repeat"
+      ></div>
+      <div class="absolute inset-0 bg-black/55 backdrop-blur-[1px]"></div>
+
+      <div
+        class="relative z-10 max-w-4xl mx-auto text-center text-white flex flex-col items-center"
+      >
+        <h2
+          class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight"
+        >
+          Enjoy every mile with adorable companionship.
+        </h2>
+        <p
+          class="max-w-2xl text-xs sm:text-sm md:text-base text-gray-200 mt-4 leading-relaxed"
+        >
+          Discover breathtaking destinations, track live local weather
+          conditions, and uncover hidden gems around the globe. Whether planning
+          a weekend getaway or a cross-country adventure, enter your dream city
+          below.
+        </p>
+
+        <form
+          class="flex flex-col sm:flex-row items-stretch sm:items-center w-full max-w-md rounded-xl overflow-hidden shadow-xl bg-white mt-8 focus-within:ring-2 focus-within:ring-amber-400"
+        >
+          <input
+            type="text"
+            placeholder="Enter destination city..."
+            class="flex-1 px-4 py-3 text-sm text-gray-800 bg-transparent focus:outline-none"
+            required
+          />
+          <button
+            type="submit"
+            class="bg-amber-400 px-6 py-3 text-sm font-bold text-gray-900 hover:bg-amber-500 transition-colors"
+          >
+            Search
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="bg-gray-100 border-t border-gray-200">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"
+      >
+        <div class="flex flex-col space-y-4">
+          <a href="/">
+            <img
+              src="../public/Logo (1).png"
+              alt="Car Rentals Logo"
+              class="h-8 w-auto object-contain"
+            />
+          </a>
+          <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">
+            Your ultimate partner for reliable car rentals and seamless travel
+            adventures. Explore new destinations with comfort, safety, and ease.
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <a
+              href="#"
+              class="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm hover:scale-110 transition-transform"
+            >
+              <img
+                src="../public/Group (1).png"
+                alt="Social"
+                class="w-4 h-4 object-contain"
+              />
+            </a>
+            <a
+              href="#"
+              class="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm hover:scale-110 transition-transform"
+            >
+              <img
+                src="../public/Group (2).png"
+                alt="Social"
+                class="w-4 h-4 object-contain"
+              />
+            </a>
+            <a
+              href="#"
+              class="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm hover:scale-110 transition-transform"
+            >
+              <img
+                src="../public/x.png"
+                alt="X"
+                class="w-4 h-4 object-contain"
+              />
+            </a>
+            <a
+              href="#"
+              class="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm hover:scale-110 transition-transform"
+            >
+              <img
+                src="../public/ins.png"
+                alt="Instagram"
+                class="w-4 h-4 object-contain"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="flex flex-col space-y-3">
+          <h4 class="font-bold text-gray-900 text-base">Useful Links</h4>
+          <ul class="space-y-2 text-gray-600 text-xs sm:text-sm">
+            <li>
+              <a href="/about" class="hover:text-[#5937E0] transition-colors"
+                >About us</a
+              >
+            </li>
+            <li>
+              <a href="/contact" class="hover:text-[#5937E0] transition-colors"
+                >Contact us</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#5937E0] transition-colors"
+                >Gallery</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#5937E0] transition-colors"
+                >Blog & News</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#5937E0] transition-colors"
+                >F.A.Q</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col space-y-3">
+          <h4 class="font-bold text-gray-900 text-base">Vehicles</h4>
+          <ul class="space-y-2 text-gray-600 text-xs sm:text-sm">
+            <li>
+              <a
+                href="/vehicules"
+                class="hover:text-[#5937E0] transition-colors"
+                >Sedan</a
+              >
+            </li>
+            <li>
+              <a
+                href="/vehicules"
+                class="hover:text-[#5937E0] transition-colors"
+                >Cabriolet</a
+              >
+            </li>
+            <li>
+              <a
+                href="/vehicules"
+                class="hover:text-[#5937E0] transition-colors"
+                >Pickup</a
+              >
+            </li>
+            <li>
+              <a
+                href="/vehicules"
+                class="hover:text-[#5937E0] transition-colors"
+                >Minivan</a
+              >
+            </li>
+            <li>
+              <a
+                href="/vehicules"
+                class="hover:text-[#5937E0] transition-colors"
+                >SUV</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col space-y-4">
+          <h4 class="font-bold text-gray-900 text-base">Contact Us</h4>
+
+          <div
+            class="flex items-start space-x-2.5 text-xs sm:text-sm text-gray-600"
+          >
+            <img
+              src="../public/mailicon.png"
+              alt="Address"
+              class="w-4 h-4 mt-0.5 flex-shrink-0 object-contain"
+            />
+            <span>Oxford Ave. Cary, NC 27511</span>
+          </div>
+
+          <div
+            class="flex items-start space-x-2.5 text-xs sm:text-sm text-gray-600"
+          >
+            <img
+              src="../public/Icon+bg.png"
+              alt="Email"
+              class="w-4 h-4 mt-0.5 flex-shrink-0 object-contain"
+            />
+            <a
+              href="mailto:nwiger@yahoo.com"
+              class="hover:text-[#5937E0] transition-colors"
+              >nwiger@yahoo.com</a
+            >
+          </div>
+
+          <div
+            class="flex items-start space-x-2.5 text-xs sm:text-sm text-gray-600"
+          >
+            <img
+              src="../public/phone.png"
+              alt="Phone"
+              class="w-4 h-4 mt-0.5 flex-shrink-0 object-contain"
+            />
+            <a
+              href="tel:+5375476401"
+              class="hover:text-[#5937E0] transition-colors"
+              >+537 547-6401</a
+            >
+          </div>
+
+          <div class="pt-2">
+            <span class="block text-xs font-semibold text-gray-700 mb-2"
+              >Download App</span
+            >
+            <div class="flex flex-col sm:flex-row lg:flex-col gap-2">
+              <a href="#"
+                ><img
+                  src="../public/App Store.png"
+                  alt="App Store"
+                  class="h-8 w-auto object-contain"
+              /></a>
+              <a href="#"
+                ><img
+                  src="../public/Google Play.png"
+                  alt="Google Play"
+                  class="h-8 w-auto object-contain"
+              /></a>
+            </div>
+          </div>
         </div>
       </div>
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
-  
-  
-  <div class="max-sm:max-w-xs p-4 bg-white rounded-xl shadow-md border border-gray-100 flex flex-col gap-4 hover:-translate-y-1 hover:scale-105 transition-transform duration-300">
-    <img src="../public/porshe.jpg" alt="Mercedes" class="w-full h-40 object-cover rounded-lg" />
-    <div class="flex justify-between items-center">
-      <h1 class="text-xl font-bold text-gray-800">Mercedes</h1>
-      <p class="text-lg font-semibold text-blue-600">$25 <span class="text-sm font-normal text-gray-500">/ day</span></p>
-    </div>
-    <div class="grid grid-cols-3 gap-2 pt-2 border-t border-gray-100 text-sm text-gray-600">
-      <div class="flex items-center gap-2"><img src="../public/gear-shift(1) 1.png" alt="" class="w-5 h-5 object-contain" /><p>Automatic</p></div>
-      <div class="flex items-center gap-2"><img src="../public/g17.png" alt="" class="w-5 h-5 object-contain" /><p>PB 95</p></div>
-      <div class="flex items-center gap-2"><img src="../public/g1593.png" alt="" class="w-5 h-5 object-contain" /><p>AC</p></div>
-    </div>
-    <button class="w-full mt-4 bg-[#5937E0] text-white font-bold py-2 px-4 rounded hover:bg-[#462ab0] transition duration-200">View details</button>
-  </div>
-
-  
-  <div class="max-sm:max-w-xs p-4 bg-white rounded-xl shadow-md border border-gray-100 flex flex-col gap-4 hover:-translate-y-1 hover:scale-105 transition-transform duration-300">
-    <img src="../public/toyota.jpg" alt="Toyota" class="w-full h-40 object-cover rounded-lg" />
-    <div class="flex justify-between items-center">
-      <h1 class="text-xl font-bold text-gray-800">Toyota</h1>
-      <p class="text-lg font-semibold text-blue-600">$25 <span class="text-sm font-normal text-gray-500">/ day</span></p>
-    </div>
-    <div class="grid grid-cols-3 gap-2 pt-2 border-t border-gray-100 text-sm text-gray-600">
-      <div class="flex items-center gap-2"><img src="../public/gear-shift(1) 1.png" alt="" class="w-5 h-5 object-contain" /><p>Automatic</p></div>
-      <div class="flex items-center gap-2"><img src="../public/g17.png" alt="" class="w-5 h-5 object-contain" /><p>PB 95</p></div>
-      <div class="flex items-center gap-2"><img src="../public/g1593.png" alt="" class="w-5 h-5 object-contain" /><p>AC</p></div>
-    </div>
-    <button class="w-full mt-4 bg-[#5937E0] text-white font-bold py-2 px-4 rounded hover:bg-[#462ab0] transition duration-200">View details</button>
-  </div>
-
-  
-  <div class="max-sm:max-w-xs p-4 bg-white rounded-xl shadow-md border border-gray-100 flex flex-col gap-4 hover:-translate-y-1 hover:scale-105 transition-transform duration-300">
-    <img src="../public/ford.jpg" alt="Ford" class="w-full h-40 object-cover rounded-lg" />
-    <div class="flex justify-between items-center">
-      <h1 class="text-xl font-bold text-gray-800">Ford</h1>
-      <p class="text-lg font-semibold text-blue-600">$25 <span class="text-sm font-normal text-gray-500">/ day</span></p>
-    </div>
-    <div class="grid grid-cols-3 gap-2 pt-2 border-t border-gray-100 text-sm text-gray-600">
-      <div class="flex items-center gap-2"><img src="../public/gear-shift(1) 1.png" alt="" class="w-5 h-5 object-contain" /><p>Automatic</p></div>
-      <div class="flex items-center gap-2"><img src="../public/g17.png" alt="" class="w-5 h-5 object-contain" /><p>PB 95</p></div>
-      <div class="flex items-center gap-2"><img src="../public/g1593.png" alt="" class="w-5 h-5 object-contain" /><p>AC</p></div>
-    </div>
-    <button class="w-full mt-4 bg-[#5937E0] text-white font-bold py-2 px-4 rounded hover:bg-[#462ab0] transition duration-200">View details</button>
-  </div>
-
-  
-  <div class="max-sm:max-w-xs p-4 bg-white rounded-xl shadow-md border border-gray-100 flex flex-col gap-4 hover:-translate-y-1 hover:scale-105 transition-transform duration-300">
-    <img src="../public/honda.jpg" alt="Honda" class="w-full h-40 object-cover rounded-lg" />
-    <div class="flex justify-between items-center">
-      <h1 class="text-xl font-bold text-gray-800">Honda</h1>
-      <p class="text-lg font-semibold text-blue-600">$25 <span class="text-sm font-normal text-gray-500">/ day</span></p>
-    </div>
-    <div class="grid grid-cols-3 gap-2 pt-2 border-t border-gray-100 text-sm text-gray-600">
-      <div class="flex items-center gap-2"><img src="../public/gear-shift(1) 1.png" alt="" class="w-5 h-5 object-contain" /><p>Automatic</p></div>
-      <div class="flex items-center gap-2"><img src="../public/g17.png" alt="" class="w-5 h-5 object-contain" /><p>PB 95</p></div>
-      <div class="flex items-center gap-2"><img src="../public/g1593.png" alt="" class="w-5 h-5 object-contain" /><p>AC</p></div>
-    </div>
-    <button class="w-full mt-4 bg-[#5937E0] text-white font-bold py-2 px-4 rounded hover:bg-[#462ab0] transition duration-200">View details</button>
-  </div>
-
-  
-  <div class="max-sm:max-w-xs p-4 bg-white rounded-xl shadow-md border border-gray-100 flex flex-col gap-4 hover:-translate-y-1 hover:scale-105 transition-transform duration-300">
-    <img src="../public/bmw.jpg" alt="BMW" class="w-full h-40 object-cover rounded-lg" />
-    <div class="flex justify-between items-center">
-      <h1 class="text-xl font-bold text-gray-800">BMW</h1>
-      <p class="text-lg font-semibold text-blue-600">$25 <span class="text-sm font-normal text-gray-500">/ day</span></p>
-    </div>
-    <div class="grid grid-cols-3 gap-2 pt-2 border-t border-gray-100 text-sm text-gray-600">
-      <div class="flex items-center gap-2"><img src="../public/gear-shift(1) 1.png" alt="" class="w-5 h-5 object-contain" /><p>Automatic</p></div>
-      <div class="flex items-center gap-2"><img src="../public/g17.png" alt="" class="w-5 h-5 object-contain" /><p>PB 95</p></div>
-      <div class="flex items-center gap-2"><img src="../public/g1593.png" alt="" class="w-5 h-5 object-contain" /><p>AC</p></div>
-    </div>
-    <button class="w-full mt-4 bg-[#5937E0] text-white font-bold py-2 px-4 rounded hover:bg-[#462ab0] transition duration-200">View details</button>
-  </div>
-
-  
-  <div class="max-sm:max-w-xs p-4 bg-white rounded-xl shadow-md border border-gray-100 flex flex-col gap-4 hover:-translate-y-1 hover:scale-105 transition-transform duration-300">
-    <img src="../public/mercedes.jpg" alt="Mercedes" class="w-full h-40 object-cover rounded-lg" />
-    <div class="flex justify-between items-center">
-      <h1 class="text-xl font-bold text-gray-800">Mercedes</h1>
-      <p class="text-lg font-semibold text-blue-600">$25 <span class="text-sm font-normal text-gray-500">/ day</span></p>
-    </div>
-    <div class="grid grid-cols-3 gap-2 pt-2 border-t border-gray-100 text-sm text-gray-600">
-      <div class="flex items-center gap-2"><img src="../public/gear-shift(1) 1.png" alt="" class="w-5 h-5 object-contain" /><p>Automatic</p></div>
-      <div class="flex items-center gap-2"><img src="../public/g17.png" alt="" class="w-5 h-5 object-contain" /><p>PB 95</p></div>
-      <div class="flex items-center gap-2"><img src="../public/g1593.png" alt="" class="w-5 h-5 object-contain" /><p>AC</p></div>
-    </div>
-    <button class="w-full mt-4 bg-[#5937E0] text-white font-bold py-2 px-4 rounded hover:bg-[#462ab0] transition duration-200">View details</button>
-  </div>
-</div>
-</div>
-    </section>
-<section class="flex flex-row items-center justify-center gap-12 mt-[50px]">
-  <div class="flex flex-col p-4 max-w-xl">
-    <h1 class="text-3xl font-bold">Download Mobile App</h1>
-    <p class="mt-4 mb-4">Take your experience on the go. Download our app today to unlock exclusive features, enjoy faster performance, and manage everything right from your pocket—anytime, anywhere.</p>
-    <div class="flex gap-4">
-      <img src="../public/App Store.png" alt="AppStore">
-      <img src="../public/Google Play.png" alt="GooglePlay">
-    </div>
-  </div>
-  <div>
-    
-    <img src="../public/Group 11.png" alt="App Preview">
-  </div>
-</section>
-<section >
-<div class="w-full h-96 bg-[url('../public/hero2.jpg')] bg-cover bg-center absolute"></div>
-<div class="relative text-white p-6">
-  <h1 class="text-4xl font-extrabold max-w-[50%]">Enjoy every mile with adorable companionship.</h1>
-  <p class="max-w-[50%] mt-[30px]">Discover breathtaking destinations, track live local weather conditions, and uncover hidden gems around the globe. Whether you are planning a weekend getaway or a cross-country adventure, just enter your dream city below to access curated itineraries, hotel recommendations, and essential travel insights tailored just for you.
-  </p>
-<div class="flex items-center w-full max-w-md rounded-lg border border-gray-300 bg-white overflow-hidden shadow-sm focus-within:ring-2 focus-within:ring-amber-400 mt-[50px]">
-  <input type="text" placeholder="City" class="w-full px-4 py-2 text-gray-700 bg-transparent focus:outline-none">
-  <button class="bg-amber-300 px-5 py-2 font-medium text-gray-800 hover:bg-amber-400 transition-colors">Search</button>
-</div>
-</div>
-</section>
-<footer class="mt-[50px] flex flex-col md:flex-row justify-between p-6 gap-8 bg-gray-50 border-t border-gray-200">
-  
-  
-  <div class="flex flex-col space-y-4 max-w-xs">
-    <img src="../public/Logo (1).png" alt="Logo" class="max-w-[180px]">
-    <p class="text-gray-600 text-sm">
-      Your ultimate partner for reliable car rentals and seamless travel adventures. Explore new destinations with comfort, safety, and ease.
-    </p>
-    <div class="flex flex-row gap-3">
-      <img src="../public/Group (1).png" alt="Social icon" class="w-6 h-6">
-      <img src="../public/Group (2).png" alt="Social icon" class="w-6 h-6">
-      <img src="../public/x.png" alt="X icon" class="w-6 h-6">
-      <img src="../public/ins.png" alt="Instagram icon" class="w-6 h-6">
-    </div>
-  </div>
-
-  
-  <div class="flex flex-col space-y-4">
-    <div class="flex items-start space-x-3 items-center">
-      <img src="../public/mailicon.png" alt="Mail icon" class="w-6 h-6 flex-shrink-0">
-      <div class="flex flex-col">
-        <h3 class="font-bold text-gray-800">Address</h3>
-        <p class="text-gray-600 text-sm">Oxford Ave. Cary, NC 27511</p>
+      <div
+        class="border-t border-gray-200 py-4 text-center text-xs text-gray-500"
+      >
+        <p>&copy; 2026 CarRentals. All rights reserved.</p>
       </div>
-    </div>
-    
-    <div class="flex flex-col space-y-2">
-      <h3 class="font-bold text-gray-800">Useful links</h3>
-      <ul class="space-y-1 text-gray-600 text-sm">
-        <li class="font-[roboto]">About us</li>
-        <li class="font-[roboto]">Contact us</li>
-        <li class="font-[roboto]">Gallery</li>
-        <li class="font-[roboto]">Blog</li>
-        <li class="font-[roboto]">F.A.Q</li>
-      </ul>
-    </div>
-  </div>
+    </footer>
 
-  
-  <div class="flex flex-col space-y-4">
-    <div class="flex items-start space-x-3 items-center">
-      <img src="../public/Icon+bg.png" alt="Email icon" class="w-6 h-6 flex-shrink-0">
-      <div class="flex flex-col">
-        <h3 class="font-bold text-gray-800">Email</h3>
-        <p class="text-gray-600 text-sm">nwiger@yahoo.com</p>
-      </div>
-    </div>
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+      const closeIcon = document.getElementById("close-icon");
 
-    <div class="flex flex-col space-y-2">
-      <h3 class="font-bold text-gray-800">Vehicles</h3>
-      <ul class="space-y-1 text-gray-600 text-sm">
-        <li class="font-[roboto]">Sedan</li>
-        <li class="font-[roboto]">Cabriolet</li>
-        <li class="font-[roboto]">Pickup</li>
-        <li class="font-[roboto]">Minivan</li>
-        <li class="font-[roboto]">SUV</li>
-      </ul>
-    </div>
-  </div>
-
-  
-  <div class="flex flex-col space-y-4">
-    <div class="flex items-start space-x-3 items-center">
-      <img src="../public/mailicon.png" alt="Phone icon" class="w-6 h-6 flex-shrink-0">
-      <div class="flex flex-col">
-        <h3 class="font-bold text-gray-800">Phone</h3>
-        <p class="text-gray-600 text-sm">+537 547-6401</p>
-      </div>
-    </div>
-
-    <div class="flex flex-col space-y-2">
-      <h3 class="font-bold text-gray-800">Download App</h3>
-      <div class="flex flex-col gap-2">
-        <img src="../public/App Store.png" alt="App Store" class="w-32">
-        <img src="../public/Google Play.png" alt="Google Play" class="w-32">
-      </div>
-    </div>
-  </div>
-
-</footer>
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener("click", () => {
+          const isHidden = mobileMenu.classList.toggle("hidden");
+          menuIcon.classList.toggle("hidden", !isHidden);
+          closeIcon.classList.toggle("hidden", isHidden);
+        });
+      }
+    </script>
   </body>
 </html>
